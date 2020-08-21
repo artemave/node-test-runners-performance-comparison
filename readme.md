@@ -1,6 +1,6 @@
 # Node test runners performance comparison
 
-Not an exhaustive comparison by any means. I was just curious if requiring test files "statically" via node's `-r` ([donc](https://github.com/artemave/donc) way) results in better performance than requiring test files inside node process ([mocha](https://github.com/mochajs/mocha) way). Donc seems to be marginally faster, but that could also be due to the fact that it's smaller and/or has less dsl to parse.
+Not an exhaustive comparison by any means. I was just curious if requiring test files "statically" via `node -r` ([donc](https://github.com/artemave/donc) way) results in better performance than requiring test files inside node process ([mocha](https://github.com/mochajs/mocha) way). Donc seems to be marginally faster, but that could also be due to the fact that it's smaller and/or has less dsl to parse.
 
 Then I threw [jest](https://jestjs.io/) into the mix - just for laughs. And boy is it laughably slow.
 
