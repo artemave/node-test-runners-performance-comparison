@@ -16,7 +16,7 @@ real    0m7.347s
 user    0m44.525s
 sys     0m3.033s
 
-Jest single test...PASS build/jest/Sails.test.js
+Jest single test...
 real    0m2.464s
 user    0m2.674s
 sys     0m0.252s
