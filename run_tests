@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+
+bold=$(tput bold)
+teal=$(tput setaf 14)
+normal=$(tput sgr0)
+
+echo -n Generating tests...
+./bin/generateTests.js
+echo done
+
+echo "${bold}${teal}************* Jest *************${normal}"
+echo -n "${bold}Jest all tests...${normal}"
+time ./node_modules/.bin/jest --silent build/jest/*.test.js 2>&1 > /dev/null
+echo ''
+
+echo -n "${bold}Jest single test...${normal}"
+time ./node_modules/.bin/jest --silent build/jest/Sails.test.js 2>&1 > /dev/null
+echo ''
+
+echo "${bold}${teal}************* Mocha *************${normal}"
+echo -n "${bold}Mocha all tests...${normal}"
+time ./node_modules/.bin/mocha build/mocha/*Spec.js 2>&1 > /dev/null
+echo ''
+
+echo -n "${bold}Mocha single test...${normal}"
+time ./node_modules/.bin/mocha build/mocha/SailsSpec.js 2>&1 > /dev/null
+echo ''
+
+echo "${bold}${teal}************* Donc *************${normal}"
+echo -n "${bold}Donc all tests...${normal}"
+time ./node_modules/.bin/donc build/donc/*Test.js 2>&1 > /dev/null
+echo ''
+
+echo -n "${bold}Donc single test...${normal}"
+time ./node_modules/.bin/donc build/donc/SailsTest.js 2>&1 > /dev/null
+echo ''
+
+echo -n "${bold}${teal}Node start up time:${normal}"
+time node -e 1
