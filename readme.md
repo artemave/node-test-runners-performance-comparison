@@ -15,7 +15,6 @@ user    0m44.525s
 sys     0m3.033s
 
 Jest single test...PASS build/jest/Sails.test.js
-
 real    0m2.464s
 user    0m2.674s
 sys     0m0.252s
@@ -42,7 +41,7 @@ real    0m0.403s
 user    0m0.414s
 sys     0m0.041s
 
-Node start up time:
+************* Node start up time *************
 real    0m0.046s
 user    0m0.040s
 sys     0m0.008s
