@@ -2,6 +2,8 @@
 
 Not an exhaustive comparison by any means. I was just curious if requiring test files "statically" via `node -r` ([donc](https://github.com/artemave/donc) way) results in better performance than requiring test files inside node process ([mocha](https://github.com/mochajs/mocha) way). Donc seems to be marginally faster, but that could also be due to the fact that it's smaller and/or has less dsl to parse.
 
+To generate sizable load, I took the largest Node project I could think of - [Sails](https://sailsjs.com/) - and for each `.js` file in `lib` I generated a dumb test file (in each contending tech) that requires that Sails file.
+
 Then I threw [jest](https://jestjs.io/) into the mix - just for laughs. And boy is it laughably slow.
 
 Results on my machine:
@@ -47,9 +49,6 @@ user    0m0.040s
 sys     0m0.008s
 ```
 
-### Method
-
-To generate sizable load, I took the largest Node project I could think of - [Sails](https://sailsjs.com/) - and for each `.js` file in `lib` I generated a dumb test file (in each contending tech) that requires that Sails file.
 
 ## Usage
 
