@@ -4,7 +4,7 @@ Not an exhaustive comparison by any means (although more test runners can be add
 
 To generate sizable load, I took the largest Node project I could think of - [Sails](https://sailsjs.com/) - and for each `.js` file in `lib` I generated a dumb test file (in each contending tech) that requires that Sails file.
 
-Then I threw [jest](https://jestjs.io/) into the mix - just for laughs. And boy is it laughably slow.
+Then I threw [jest](https://jestjs.io/) into the mix - just for laughs - and boy is it laughably slow.
 
 Results on my machine:
 
