@@ -1,6 +1,6 @@
 # Node test runners performance comparison
 
-Not an exhaustive comparison by any means. I was just curious if requiring test files "statically" via `node -r` ([donc](https://github.com/artemave/donc) way) results in better performance than requiring test files inside node process ([mocha](https://github.com/mochajs/mocha) way). In the end, donc appears to be marginally faster, but not enough to support the claim.
+Not an exhaustive comparison by any means (although more test runners can be added easily). I was just curious if requiring test files "statically" via `node -r` ([donc](https://github.com/artemave/donc) way) results in better performance than requiring test files inside node process ([mocha](https://github.com/mochajs/mocha) way). In the end, donc appears to be marginally faster, but not enough to support the claim.
 
 To generate sizable load, I took the largest Node project I could think of - [Sails](https://sailsjs.com/) - and for each `.js` file in `lib` I generated a dumb test file (in each contending tech) that requires that Sails file.
 
