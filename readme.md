@@ -12,6 +12,7 @@ Results on my machine:
 % ./run_tests
 Generating tests...done
 ************* Jest *************
+Jest all tests...
 real    0m7.347s
 user    0m44.525s
 sys     0m3.033s
