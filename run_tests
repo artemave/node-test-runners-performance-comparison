@@ -10,20 +10,29 @@ echo done
 
 echo "${bold}${teal}************* Jest *************${normal}"
 echo -n "${bold}Jest all tests...${normal}"
-time ./node_modules/.bin/jest --silent build/jest/*.test.js 2>&1 > /dev/null
+time ./node_modules/.bin/jest --silent --testRegex 'build/jest' 2>&1 > /dev/null
 echo ''
 
 echo -n "${bold}Jest single test...${normal}"
-time ./node_modules/.bin/jest --silent build/jest/Sails.test.js 2>&1 > /dev/null
+time ./node_modules/.bin/jest --silent --testRegex 'build/jest/SailsTest.js' 2>&1 > /dev/null
 echo ''
 
 echo "${bold}${teal}************* Mocha *************${normal}"
 echo -n "${bold}Mocha all tests...${normal}"
-time ./node_modules/.bin/mocha build/mocha/*Spec.js 2>&1 > /dev/null
+time ./node_modules/.bin/mocha build/mocha/*Test.js 2>&1 > /dev/null
 echo ''
 
 echo -n "${bold}Mocha single test...${normal}"
-time ./node_modules/.bin/mocha build/mocha/SailsSpec.js 2>&1 > /dev/null
+time ./node_modules/.bin/mocha build/mocha/SailsTest.js 2>&1 > /dev/null
+echo ''
+
+echo "${bold}${teal}************* Tape *************${normal}"
+echo -n "${bold}Tape all tests...${normal}"
+time ./node_modules/.bin/tape build/tape/*Test.js 2>&1 > /dev/null
+echo ''
+
+echo -n "${bold}Tape single test...${normal}"
+time ./node_modules/.bin/tape build/tape/SailsTest.js 2>&1 > /dev/null
 echo ''
 
 echo "${bold}${teal}************* Donc *************${normal}"
@@ -33,6 +42,15 @@ echo ''
 
 echo -n "${bold}Donc single test...${normal}"
 time ./node_modules/.bin/donc build/donc/SailsTest.js 2>&1 > /dev/null
+echo ''
+
+echo "${bold}${teal}************* Banana-shark *************${normal}"
+echo -n "${bold}Banana-shark all tests...${normal}"
+time ./node_modules/.bin/bs build/banana-shark/*Test.js 2>&1 > /dev/null
+echo ''
+
+echo -n "${bold}Banana-shark single test...${normal}"
+time ./node_modules/.bin/bs build/banana-shark/SailsTest.js 2>&1 > /dev/null
 echo ''
 
 echo -n "${bold}${teal}Node start up time:${normal}"
