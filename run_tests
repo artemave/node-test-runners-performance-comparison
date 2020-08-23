@@ -8,50 +8,54 @@ echo -n Generating tests...
 ./bin/generateTests.js
 echo done
 
+rm -f results.md
+echo '| runner | real | user | system |' > results.md
+echo '| ------ | ----:| ----:| ------:|' >> results.md
+
 echo "${bold}${teal}************* Jest *************${normal}"
-echo -n "${bold}Jest all tests...${normal}"
-time ./node_modules/.bin/jest --silent --testRegex 'build/jest' 2>&1 > /dev/null
+echo "${bold}Jest all tests...${normal}"
+/usr/bin/time -o results.md -f '|Jest all tests|%e|%U|%S|' -a ./node_modules/.bin/jest --silent --testRegex 'build/jest' 2>&1 > /dev/null
 echo ''
 
-echo -n "${bold}Jest single test...${normal}"
-time ./node_modules/.bin/jest --silent --testRegex 'build/jest/SailsTest.js' 2>&1 > /dev/null
+echo "${bold}Jest single test...${normal}"
+/usr/bin/time -o results.md -f '|Jest single test|%e|%U|%S|' -a ./node_modules/.bin/jest --silent --testRegex 'build/jest/SailsTest.js' 2>&1 > /dev/null
 echo ''
 
 echo "${bold}${teal}************* Mocha *************${normal}"
 echo -n "${bold}Mocha all tests...${normal}"
-time ./node_modules/.bin/mocha build/mocha/*Test.js 2>&1 > /dev/null
+/usr/bin/time -o results.md -f '|Mocha all tests|%e|%U|%S|' -a ./node_modules/.bin/mocha build/mocha/*Test.js 2>&1 > /dev/null
 echo ''
 
 echo -n "${bold}Mocha single test...${normal}"
-time ./node_modules/.bin/mocha build/mocha/SailsTest.js 2>&1 > /dev/null
+/usr/bin/time -o results.md -f '|Mocha single test|%e|%U|%S|' -a ./node_modules/.bin/mocha build/mocha/SailsTest.js 2>&1 > /dev/null
 echo ''
 
 echo "${bold}${teal}************* Tape *************${normal}"
 echo -n "${bold}Tape all tests...${normal}"
-time ./node_modules/.bin/tape build/tape/*Test.js 2>&1 > /dev/null
+/usr/bin/time -o results.md -f '|Tape all tests|%e|%U|%S|' -a ./node_modules/.bin/tape build/tape/*Test.js 2>&1 > /dev/null
 echo ''
 
 echo -n "${bold}Tape single test...${normal}"
-time ./node_modules/.bin/tape build/tape/SailsTest.js 2>&1 > /dev/null
+/usr/bin/time -o results.md -f '|Tape single test|%e|%U|%S|' -a ./node_modules/.bin/tape build/tape/SailsTest.js 2>&1 > /dev/null
 echo ''
 
 echo "${bold}${teal}************* Donc *************${normal}"
 echo -n "${bold}Donc all tests...${normal}"
-time ./node_modules/.bin/donc build/donc/*Test.js 2>&1 > /dev/null
+/usr/bin/time -o results.md -f '|Donc all tests|%e|%U|%S|' -a ./node_modules/.bin/donc build/donc/*Test.js 2>&1 > /dev/null
 echo ''
 
 echo -n "${bold}Donc single test...${normal}"
-time ./node_modules/.bin/donc build/donc/SailsTest.js 2>&1 > /dev/null
+/usr/bin/time -o results.md -f '|Donc single test|%e|%U|%S|' -a ./node_modules/.bin/donc build/donc/SailsTest.js 2>&1 > /dev/null
 echo ''
 
 echo "${bold}${teal}************* Banana-shark *************${normal}"
 echo -n "${bold}Banana-shark all tests...${normal}"
-time ./node_modules/.bin/bs build/banana-shark/*Test.js 2>&1 > /dev/null
+/usr/bin/time -o results.md -f '|Banana-shark all tests|%e|%U|%S|' -a ./node_modules/.bin/bs build/banana-shark/*Test.js 2>&1 > /dev/null
 echo ''
 
 echo -n "${bold}Banana-shark single test...${normal}"
-time ./node_modules/.bin/bs build/banana-shark/SailsTest.js 2>&1 > /dev/null
+/usr/bin/time -o results.md -f '|Banana-shark single test|%e|%U|%S|' -a ./node_modules/.bin/bs build/banana-shark/SailsTest.js 2>&1 > /dev/null
 echo ''
 
-echo -n "${bold}${teal}Node start up time:${normal}"
-time node -e 1
+echo "${bold}${teal}Node start up time${normal}"
+/usr/bin/time -o results.md -f '|Node start up time|%e|%U|%S|' -a node -e 1

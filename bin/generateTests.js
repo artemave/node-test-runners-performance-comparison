@@ -19,7 +19,6 @@ glob.sync('./node_modules/sails/lib/**/*.js').forEach(path => {
   const doncTestFileContents = `require('../.${path}')
   const {test} = require('donc')
   const assert = require('assert')
-  const jsdom = require('jsdom')
 
   test('${path} works', () => {
     assert.ok(true)
@@ -27,7 +26,6 @@ glob.sync('./node_modules/sails/lib/**/*.js').forEach(path => {
 
   const mochaTestFileContents = `require('../.${path}')
   const assert = require('assert')
-  const jsdom = require('jsdom')
 
   describe('${path}', function() {
     it('works', function() {
@@ -36,14 +34,12 @@ glob.sync('./node_modules/sails/lib/**/*.js').forEach(path => {
   })`
 
   const jestTestFileContents = `require('../.${path}')
-  const jsdom = require('jsdom')
 
   test('${path} works', () => {
     expect(1).toBe(1)
   })`
 
   const bsTestFileContents = `require('../.${path}')
-  const jsdom = require('jsdom')
 
   module.exports = describe => {
     describe(
@@ -54,7 +50,6 @@ glob.sync('./node_modules/sails/lib/**/*.js').forEach(path => {
   }`
 
   const tapeTestFileContents = `require('../.${path}')
-  const jsdom = require('jsdom')
   const test = require('tape')
 
   test('${path}', function (t) {
