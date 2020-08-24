@@ -4,7 +4,7 @@ Not an exhaustive comparison by any means (although more test runners can be add
 
 To generate sizable load, I took the largest Node project I could think of - [Sails](https://sailsjs.com/) - and for each `.js` file in `lib` I generated a dumb test file (in each contending tech) that requires that Sails file.
 
-Then I friend of mine reminded me about [banana-shark](https://github.com/featurist/banana-shark) - a really interesting take on testing - so I added it too. Then I added [tape](https://github.com/substack/tape) for good measure. And finally, just for laughs, [jest](https://jestjs.io/). Because boy is it laughably slow.
+I showed this around and was reminded of [banana-shark](https://github.com/featurist/banana-shark) - a really interesting take on testing - so I added that too. And then [tape](https://github.com/substack/tape) for good measure. And finally, just for laughs, [jest](https://jestjs.io/). Because boy is it laughably slow.
 
 Results on my machine (seconds):
 
@@ -29,4 +29,4 @@ yarn install
 ./run_tests
 ```
 
-This generates `results.md` file with a table of results.
+This generates `results.md` file with a table of results (see above).
