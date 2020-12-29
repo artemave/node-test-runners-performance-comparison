@@ -1,10 +1,12 @@
 # Node test runners performance comparison
 
-Not an exhaustive comparison by any means (although more test runners can be added easily). I was just curious if requiring test files "statically" via `node -r` ([donc](https://github.com/artemave/donc) way) results in better performance than requiring test files inside node process ([mocha](https://github.com/mochajs/mocha) way). In the end, donc appears to be marginally faster, but not enough to support the claim.
+Not an exhaustive comparison by any means (although more test runners can be added easily).
+
+Why does this exist? I was experimenting with a test runner that requires test files "statically" (via `node -r`) and wanted to see if this approach improves test start up time. I wanted to compare the aformentioned test runned - [donc](https://github.com/artemave/donc) - with [mocha](https://github.com/mochajs/mocha), because mocha (just like any other test runner I looked into) requires test files "dynamically", iterating over glob results.
 
 To generate sizable load, I took the largest Node project I could think of - [Sails](https://sailsjs.com/) - and for each `.js` file in `lib` I generated a dumb test file (in each contending tech) that requires that Sails file.
 
-I showed this around and was reminded of [banana-shark](https://github.com/featurist/banana-shark) - a really interesting take on testing - so I added that too. And then [tape](https://github.com/substack/tape) for good measure. And finally, just for laughs, [jest](https://jestjs.io/). Because boy is it laughably slow.
+Once the "framework" was in place, it was easy to add more test runners. And so in went an [intriguing novelty](https://github.com/featurist/banana-shark), a  [trusty workhorse](https://github.com/substack/tape) and an [unusably slow thing that's nonetheless used by so many](https://jestjs.io/).
 
 Results on my machine (seconds):
 
