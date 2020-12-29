@@ -8,7 +8,7 @@ To generate sizable load, I took the largest Node project I could think of - [Sa
 
 Once the "framework" was in place, it was easy to add more test runners. And so in went an [intriguing novelty](https://github.com/featurist/banana-shark), a  [trusty workhorse](https://github.com/substack/tape) and an [unusably slow thing that's nonetheless used by so many](https://jestjs.io/).
 
-Results on my machine (seconds):
+Results on my Linux machine (seconds):
 
 | runner | real | user | system |
 | ------ | ----:| ----:| ------:|
