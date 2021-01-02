@@ -11,6 +11,7 @@ fs.mkdirSync('./build/mocha', {recursive: true})
 fs.mkdirSync('./build/jest', {recursive: true})
 fs.mkdirSync('./build/banana-shark', {recursive: true})
 fs.mkdirSync('./build/tape', {recursive: true})
+fs.mkdirSync('./build/uvu', {recursive: true})
 
 glob.sync('./node_modules/sails/lib/**/*.js').forEach(path => {
   const fileName = path.split('/').pop()
@@ -58,9 +59,20 @@ glob.sync('./node_modules/sails/lib/**/*.js').forEach(path => {
     t.equal(1, 1);
   })`
 
+  const uvuTestFileContents = `require('../.${path}')
+  const { test } = require('uvu')
+  const assert = require('uvu/assert')
+
+  test('${path}', function () {
+    assert.is(1, 1)
+  })
+
+  test.run()`
+
   fs.writeFileSync(`./build/donc/${testFileName}`, doncTestFileContents)
   fs.writeFileSync(`./build/mocha/${testFileName}`, mochaTestFileContents)
   fs.writeFileSync(`./build/jest/${testFileName}`, jestTestFileContents)
   fs.writeFileSync(`./build/banana-shark/${testFileName}`, bsTestFileContents)
   fs.writeFileSync(`./build/tape/${testFileName}`, tapeTestFileContents)
+  fs.writeFileSync(`./build/uvu/${testFileName}`, uvuTestFileContents)
 })

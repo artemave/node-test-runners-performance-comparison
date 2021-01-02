@@ -39,6 +39,15 @@ echo -n "${bold}Tape single test...${normal}"
 /usr/bin/time -o results.md -f '|Tape single test|%e|%U|%S|' -a ./node_modules/.bin/tape build/tape/SailsTest.js 2>&1 > /dev/null
 echo ''
 
+echo "${bold}${teal}************* Uvu *************${normal}"
+echo -n "${bold}Uvu all tests...${normal}"
+/usr/bin/time -o results.md -f '|Uvu all tests|%e|%U|%S|' -a ./node_modules/.bin/uvu build/uvu 2>&1 > /dev/null
+echo ''
+
+echo -n "${bold}Uvu single test...${normal}"
+/usr/bin/time -o results.md -f '|Uvu single test|%e|%U|%S|' -a node build/uvu/SailsTest.js 2>&1 > /dev/null
+echo ''
+
 echo "${bold}${teal}************* Donc *************${normal}"
 echo -n "${bold}Donc all tests...${normal}"
 /usr/bin/time -o results.md -f '|Donc all tests|%e|%U|%S|' -a ./node_modules/.bin/donc build/donc/*Test.js 2>&1 > /dev/null

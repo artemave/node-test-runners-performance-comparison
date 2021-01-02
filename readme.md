@@ -12,17 +12,19 @@ Results on my Linux machine (seconds):
 
 | runner | real | user | system |
 | ------ | ----:| ----:| ------:|
-|Jest all tests|5.31|31.65|2.63|
-|Jest single test|1.98|2.21|0.21|
-|Mocha all tests|0.47|0.51|0.03|
-|Mocha single test|0.36|0.40|0.02|
-|Donc all tests|0.41|0.40|0.06|
-|Donc single test|0.32|0.33|0.04|
-|Tape all tests|0.40|0.43|0.05|
-|Tape single test|0.28|0.30|0.02|
-|Banana-shark all tests|0.34|0.35|0.04|
-|Banana-shark single test|0.22|0.24|0.01|
-|Node start up time|0.03|0.02|0.00|
+|Jest all tests|5.36|31.77|2.57|
+|Jest single test|2.07|2.29|0.24|
+|Mocha all tests|0.47|0.52|0.03|
+|Mocha single test|0.37|0.41|0.03|
+|Uvu all tests|0.44|0.51|0.04|
+|Uvu single test|0.25|0.27|0.02|
+|Tape all tests|0.42|0.48|0.02|
+|Tape single test|0.29|0.31|0.02|
+|Donc all tests|0.41|0.41|0.06|
+|Donc single test|0.33|0.32|0.05|
+|Banana-shark all tests|0.30|0.32|0.02|
+|Banana-shark single test|0.24|0.23|0.04|
+|Node start up time|0.03|0.03|0.00|
 
 ## Usage
 
