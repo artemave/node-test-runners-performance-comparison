@@ -6,7 +6,7 @@ Once test framework was in place, I added a bunch more popular test runners into
 
 To generate sizable "import" load, I took a large Node project - [Sails](https://sailsjs.com/) - and for each `.js` file in `lib` I generated a dumb test file (in each contending tech) that requires that Sails file.
 
-Results on my Linux machine (seconds):
+Results on my machine (seconds):
 
 | runner | real | user | system |
 | ------ | ----:| ----:| ------:|

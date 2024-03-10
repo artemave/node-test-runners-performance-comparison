@@ -6,6 +6,9 @@
   "dependencies": {
     "assert-raisins": "github:artemave/assert-raisins",
     "ava": "^6.1.2",
+    "chart.js": "^3.9.1",
+    "chartjs-node-canvas": "^4.1.6",
+    "chartjs-plugin-datalabels": "^2.2.0",
     "glob": "latest",
     "jest": "latest",
     "mocha": "latest",

@@ -114,7 +114,4 @@ echo -n "${bold}Assert-raisins single test...${normal}"
 /usr/bin/time -o results.md -f '|Assert-raisins single test|%e|%U|%S|' -a ./node_modules/.bin/ars build/ars/SailsTest.js 2>&1 > /dev/null
 echo ''
 
-sleep 1
-
-echo "${bold}${teal}Node start up time${normal}"
-/usr/bin/time -o results.md -f '|Node start up time|%e|%U|%S|' -a node -e 1
+./bin/generateChart.js
