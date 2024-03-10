@@ -6,7 +6,16 @@ Once test framework was in place, I added a bunch more popular test runners into
 
 To generate sizable "import" load, I took a large Node project - [Sails](https://sailsjs.com/) - and for each `.js` file in `lib` I generated a dumb test file (in each contending tech) that requires that Sails file.
 
-Results on my machine (seconds):
+### Results on my machine (seconds)
+
+<p align="center">
+  <img width="800" src="./single-test.png"/>
+</p>
+<p align="center">
+  <img width="800" src="./all-tests.png"/>
+</p>
+
+### Raw results
 
 | runner | real | user | system |
 | ------ | ----:| ----:| ------:|
@@ -35,4 +44,4 @@ yarn install
 ./run_tests
 ```
 
-This generates `results.md` file with a table of results (see above).
+This generates charts and `results.md` file with a table of results (see above).
