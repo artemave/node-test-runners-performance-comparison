@@ -77,19 +77,6 @@ echo ''
 
 sleep 1
 
-echo "${bold}${teal}************* Ava *************${normal}"
-echo -n "${bold}Ava all tests...${normal}"
-/usr/bin/time -o results.md -f '|Ava all tests|%e|%U|%S|' -a ./node_modules/.bin/ava ./build/ava/*Test.js 2>&1 > /dev/null
-echo ''
-
-sleep 1
-
-echo -n "${bold}Ava single test...${normal}"
-/usr/bin/time -o results.md -f '|Ava single test|%e|%U|%S|' -a ./node_modules/.bin/ava ./build/ava/SailsTest.js 2>&1 > /dev/null
-echo ''
-
-sleep 1
-
 echo "${bold}${teal}************* Uvu *************${normal}"
 echo -n "${bold}Uvu all tests...${normal}"
 /usr/bin/time -o results.md -f '|Uvu all tests|%e|%U|%S|' -a ./node_modules/.bin/uvu build/uvu 2>&1 > /dev/null
@@ -99,6 +86,19 @@ sleep 1
 
 echo -n "${bold}Uvu single test...${normal}"
 /usr/bin/time -o results.md -f '|Uvu single test|%e|%U|%S|' -a node build/uvu/SailsTest.js 2>&1 > /dev/null
+echo ''
+
+sleep 1
+
+echo "${bold}${teal}************* Ava *************${normal}"
+echo -n "${bold}Ava all tests...${normal}"
+/usr/bin/time -o results.md -f '|Ava all tests|%e|%U|%S|' -a ./node_modules/.bin/ava ./build/ava/*Test.js 2>&1 > /dev/null
+echo ''
+
+sleep 1
+
+echo -n "${bold}Ava single test...${normal}"
+/usr/bin/time -o results.md -f '|Ava single test|%e|%U|%S|' -a ./node_modules/.bin/ava ./build/ava/SailsTest.js 2>&1 > /dev/null
 echo ''
 
 sleep 1
