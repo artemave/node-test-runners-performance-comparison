@@ -9,109 +9,111 @@ echo -n Generating tests...
 echo 'done'
 
 rm -f results.md
-echo '| runner | real | user | system |' > results.md
-echo '| ------ | ----:| ----:| ------:|' >> results.md
+echo '| runner | real | user | system | notes |' > results.md
+echo '| ------ | ----:| ----:| ------:| ----- |' >> results.md
 
 echo "${bold}${teal}************* Node test runner *************${normal}"
 echo "${bold}Node all tests...${normal}"
-/usr/bin/time -o results.md -f '|Node all tests|%e|%U|%S|' -a node --test ./build/node/*Test.js 2>&1 > /dev/null
-echo ''
+/usr/bin/time -o results.md -f '|Node all tests|%e|%U|%S||' -a node --test ./build/node/*Test.js 2>&1 > /dev/null
 
 sleep 1
 
 echo "${bold}Node single test...${normal}"
-/usr/bin/time -o results.md -f '|Node single test|%e|%U|%S|' -a node --test ./build/node/SailsTest.js 2>&1 > /dev/null
-echo ''
+/usr/bin/time -o results.md -f '|Node single test|%e|%U|%S||' -a node --test ./build/node/SailsTest.js 2>&1 > /dev/null
 
 sleep 1
 
 echo "${bold}${teal}************* Jest *************${normal}"
 echo "${bold}Jest all tests...${normal}"
-/usr/bin/time -o results.md -f '|Jest all tests|%e|%U|%S|' -a node --experimental-vm-modules node_modules/jest/bin/jest.js --silent --testRegex 'build/jest' 2>&1 > /dev/null
+/usr/bin/time -o results.md -f '|Jest all tests|%e|%U|%S||' -a node --experimental-vm-modules node_modules/jest/bin/jest.js --silent --testRegex 'build/jest' 2>&1 > /dev/null
 echo ''
 
 sleep 1
 
 echo "${bold}Jest single test...${normal}"
-/usr/bin/time -o results.md -f '|Jest single test|%e|%U|%S|' -a node --experimental-vm-modules node_modules/jest/bin/jest.js --silent --testRegex 'build/jest/SailsTest.js' 2>&1 > /dev/null
+/usr/bin/time -o results.md -f '|Jest single test|%e|%U|%S||' -a node --experimental-vm-modules node_modules/jest/bin/jest.js --silent --testRegex 'build/jest/SailsTest.js' 2>&1 > /dev/null
 echo ''
 
 sleep 1
 
 echo "${bold}${teal}************* Mocha *************${normal}"
 echo -n "${bold}Mocha all tests...${normal}"
-/usr/bin/time -o results.md -f '|Mocha all tests|%e|%U|%S|' -a ./node_modules/.bin/mocha ./build/mocha/*Test.js 2>&1 > /dev/null
+/usr/bin/time -o results.md -f '|Mocha all tests|%e|%U|%S||' -a ./node_modules/.bin/mocha ./build/mocha/*Test.js 2>&1 > /dev/null
 echo ''
 
 sleep 1
 
 echo -n "${bold}Mocha single test...${normal}"
-/usr/bin/time -o results.md -f '|Mocha single test|%e|%U|%S|' -a ./node_modules/.bin/mocha ./build/mocha/SailsTest.js 2>&1 > /dev/null
+/usr/bin/time -o results.md -f '|Mocha single test|%e|%U|%S||' -a ./node_modules/.bin/mocha ./build/mocha/SailsTest.js 2>&1 > /dev/null
 echo ''
 
 sleep 1
 
 echo "${bold}${teal}************* Tape *************${normal}"
 echo -n "${bold}Tape all tests...${normal}"
-/usr/bin/time -o results.md -f '|Tape all tests|%e|%U|%S|' -a ./node_modules/.bin/tape ./build/tape/*Test.js 2>&1 > /dev/null
+notes='No concurrency'
+/usr/bin/time -o results.md -f "|Tape all tests|%e|%U|%S|$notes|" -a ./node_modules/.bin/tape ./build/tape/*Test.js 2>&1 > /dev/null
 echo ''
 
 sleep 1
 
 echo -n "${bold}Tape single test...${normal}"
-/usr/bin/time -o results.md -f '|Tape single test|%e|%U|%S|' -a ./node_modules/.bin/tape ./build/tape/SailsTest.js 2>&1 > /dev/null
+/usr/bin/time -o results.md -f '|Tape single test|%e|%U|%S||' -a ./node_modules/.bin/tape ./build/tape/SailsTest.js 2>&1 > /dev/null
 echo ''
 
 sleep 1
 
 echo "${bold}${teal}************* Vitest *************${normal}"
 echo -n "${bold}Vitest all tests...${normal}"
-/usr/bin/time -o results.md -f '|Vitest all tests|%e|%U|%S|' -a ./node_modules/.bin/vitest 2>&1 > /dev/null
+notes='Default concurrency mode'
+/usr/bin/time -o results.md -f "|Vitest all tests|%e|%U|%S|$notes|" -a ./node_modules/.bin/vitest 2>&1 > /dev/null
 echo ''
 
 sleep 1
 
 echo -n "${bold}Vitest single test...${normal}"
-/usr/bin/time -o results.md -f '|Vitest single test|%e|%U|%S|' -a ./node_modules/.bin/vitest build/vitest/SailsTest.js 2>&1 > /dev/null
+/usr/bin/time -o results.md -f '|Vitest single test|%e|%U|%S||' -a ./node_modules/.bin/vitest build/vitest/SailsTest.js 2>&1 > /dev/null
 echo ''
 
 sleep 1
 
 echo "${bold}${teal}************* Uvu *************${normal}"
 echo -n "${bold}Uvu all tests...${normal}"
-/usr/bin/time -o results.md -f '|Uvu all tests|%e|%U|%S|' -a ./node_modules/.bin/uvu build/uvu 2>&1 > /dev/null
+notes='No concurrency'
+/usr/bin/time -o results.md -f "|Uvu all tests|%e|%U|%S|$notes|" -a ./node_modules/.bin/uvu build/uvu 2>&1 > /dev/null
 echo ''
 
 sleep 1
 
 echo -n "${bold}Uvu single test...${normal}"
-/usr/bin/time -o results.md -f '|Uvu single test|%e|%U|%S|' -a node build/uvu/SailsTest.js 2>&1 > /dev/null
+/usr/bin/time -o results.md -f '|Uvu single test|%e|%U|%S||' -a node build/uvu/SailsTest.js 2>&1 > /dev/null
 echo ''
 
 sleep 1
 
 echo "${bold}${teal}************* Ava *************${normal}"
 echo -n "${bold}Ava all tests...${normal}"
-/usr/bin/time -o results.md -f '|Ava all tests|%e|%U|%S|' -a ./node_modules/.bin/ava ./build/ava/*Test.js 2>&1 > /dev/null
+/usr/bin/time -o results.md -f '|Ava all tests|%e|%U|%S||' -a ./node_modules/.bin/ava ./build/ava/*Test.js 2>&1 > /dev/null
 echo ''
 
 sleep 1
 
 echo -n "${bold}Ava single test...${normal}"
-/usr/bin/time -o results.md -f '|Ava single test|%e|%U|%S|' -a ./node_modules/.bin/ava ./build/ava/SailsTest.js 2>&1 > /dev/null
+/usr/bin/time -o results.md -f '|Ava single test|%e|%U|%S||' -a ./node_modules/.bin/ava ./build/ava/SailsTest.js 2>&1 > /dev/null
 echo ''
 
 sleep 1
 
 echo "${bold}${teal}************* Assert-raisins *************${normal}"
 echo -n "${bold}Assert-raisins all tests...${normal}"
-/usr/bin/time -o results.md -f '|Assert-raisins all tests|%e|%U|%S|' -a ./node_modules/.bin/ars build/ars/*Test.js 2>&1 > /dev/null
+/usr/bin/time -o results.md -f '|Assert-raisins all tests|%e|%U|%S||' -a ./node_modules/.bin/ars build/ars/*Test.js 2>&1 > /dev/null
 echo ''
 
 sleep 1
 
 echo -n "${bold}Assert-raisins single test...${normal}"
-/usr/bin/time -o results.md -f '|Assert-raisins single test|%e|%U|%S|' -a ./node_modules/.bin/ars build/ars/SailsTest.js 2>&1 > /dev/null
+/usr/bin/time -o results.md -f '|Assert-raisins single test|%e|%U|%S||' -a ./node_modules/.bin/ars build/ars/SailsTest.js 2>&1 > /dev/null
 echo ''
 
-./bin/generateChart.js
+node ./bin/generateChart.js
+node ./bin/updateReadme.js

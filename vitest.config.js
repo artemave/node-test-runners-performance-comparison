@@ -4,6 +4,5 @@ export default defineConfig({
   test: {
     include: ['./build/vitest/*.js'],
     watch: false,
-    isolate: false,
   },
 })
