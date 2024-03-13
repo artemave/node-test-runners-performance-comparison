@@ -1,0 +1,193 @@
+{
+  "assert-raisins": {
+    "allTestsFilesImportOnly": {
+      "total": "0.45",
+      "system": "0.57",
+      "user": "3.28",
+      "cpu": "842%"
+    },
+    "singleTestFileImportOnly": {
+      "total": "0.08",
+      "system": "0.02",
+      "user": "0.08",
+      "cpu": "130%"
+    },
+    "singleTestImportOnly": {
+      "total": "0.06",
+      "system": "0.02",
+      "user": "0.06",
+      "cpu": "127%"
+    },
+    "allTestsFilesWithLoad": {
+      "total": "1.83",
+      "system": "8.26",
+      "user": "7.85",
+      "cpu": "877%"
+    }
+  },
+  "node": {
+    "allTestsFilesImportOnly": {
+      "total": "1.04",
+      "system": "2.72",
+      "user": "10.71",
+      "cpu": "1282%"
+    },
+    "singleTestFileImportOnly": {
+      "total": "0.09",
+      "system": "0.02",
+      "user": "0.07",
+      "cpu": "112%"
+    },
+    "singleTestImportOnly": {
+      "total": "0.09",
+      "system": "0.02",
+      "user": "0.08",
+      "cpu": "114%"
+    },
+    "allTestsFilesWithLoad": {
+      "total": "2.16",
+      "system": "11.51",
+      "user": "16.18",
+      "cpu": "1281%"
+    }
+  },
+  "uvu": {
+    "allTestsFilesImportOnly": {
+      "total": "0.27",
+      "system": "0.06",
+      "user": "0.27",
+      "cpu": "125%",
+      "notes": "No concurrency"
+    },
+    "singleTestFileImportOnly": {
+      "total": "0.05",
+      "system": "0.01",
+      "user": "0.04",
+      "cpu": "106%"
+    },
+    "singleTestImportOnly": {
+      "total": "0.05",
+      "system": "0.01",
+      "user": "0.03",
+      "cpu": "110%",
+      "notes": "Identical to running the entire file"
+    },
+    "allTestsFilesWithLoad": {
+      "total": "7.09",
+      "system": "4.20",
+      "user": "3.10",
+      "cpu": "102%",
+      "notes": "No concurrency"
+    }
+  },
+  "jest": {
+    "allTestsFilesImportOnly": {
+      "total": "2.85",
+      "system": "4.68",
+      "user": "32.06",
+      "cpu": "1285%"
+    },
+    "singleTestFileImportOnly": {
+      "total": "0.54",
+      "system": "0.32",
+      "user": "0.94",
+      "cpu": "233%"
+    },
+    "singleTestImportOnly": {
+      "total": "0.54",
+      "system": "0.31",
+      "user": "0.95",
+      "cpu": "233%"
+    },
+    "allTestsFilesWithLoad": {
+      "total": "4.05",
+      "system": "12.48",
+      "user": "40.96",
+      "cpu": "1319%"
+    }
+  },
+  "mocha": {
+    "allTestsFilesImportOnly": {
+      "total": "0.65",
+      "system": "1.19",
+      "user": "5.56",
+      "cpu": "1025%"
+    },
+    "singleTestFileImportOnly": {
+      "total": "0.13",
+      "system": "0.03",
+      "user": "0.11",
+      "cpu": "114%"
+    },
+    "allTestsFilesWithLoad": {
+      "total": "1.65",
+      "system": "9.97",
+      "user": "10.96",
+      "cpu": "1264%"
+    }
+  },
+  "tape": {
+    "allTestsFilesImportOnly": {
+      "total": "0.30",
+      "system": "0.07",
+      "user": "0.30",
+      "cpu": "124%",
+      "notes": "No concurrency"
+    },
+    "singleTestFileImportOnly": {
+      "total": "0.08",
+      "system": "0.02",
+      "user": "0.08",
+      "cpu": "123%"
+    },
+    "allTestsFilesWithLoad": {
+      "total": "7.21",
+      "system": "4.14",
+      "user": "3.74",
+      "cpu": "109%",
+      "notes": "No concurrency"
+    }
+  },
+  "ava": {
+    "allTestsFilesImportOnly": {
+      "total": "3.26",
+      "system": "5.45",
+      "user": "35.15",
+      "cpu": "1243%"
+    },
+    "singleTestFileImportOnly": {
+      "total": "0.38",
+      "system": "0.09",
+      "user": "0.38",
+      "cpu": "126%"
+    },
+    "allTestsFilesWithLoad": {
+      "total": "4.77",
+      "system": "12.84",
+      "user": "41.09",
+      "cpu": "1130%"
+    }
+  },
+  "vitest": {
+    "allTestsFilesImportOnly": {
+      "total": "1.25",
+      "system": "2.03",
+      "user": "7.86",
+      "cpu": "792%",
+      "notes": "Faster concurrency option (non-default)"
+    },
+    "singleTestFileImportOnly": {
+      "total": "0.73",
+      "system": "1.28",
+      "user": "3.21",
+      "cpu": "612%"
+    },
+    "allTestsFilesWithLoad": {
+      "total": "2.59",
+      "system": "9.87",
+      "user": "13.90",
+      "cpu": "915%",
+      "notes": "Faster concurrency option (non-default)"
+    }
+  }
+}

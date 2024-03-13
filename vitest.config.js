@@ -2,7 +2,8 @@ import { defineConfig } from 'vitest/config'
 
 export default defineConfig({
   test: {
-    include: ['./build/vitest/*.js'],
+    isolate: false,
+    include: ['./build/vitest/**/*.js'],
     watch: false,
   },
 })
