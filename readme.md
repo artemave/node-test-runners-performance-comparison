@@ -1,6 +1,6 @@
 # Node test runners performance comparison
 
-I've been toying with my [own test runner](https://github.com/artemave/assert-raisins), and one of the main ideas was to make it as fast as possible. What better way to assert that, than to compare with other test runners? In the end, I think these benchmarks are way more interesting and useful than my test runner, but it's still there, among the contenders.
+I've been toying with my [own test runner](https://github.com/artemave/assert-raisins), and one of the main ideas was to make it as fast as possible. What better way to assert that, than to compare with other test runners? In the end though, I think these benchmarks are more interesting and useful than my test runner, but it's still there, among the contenders.
 
 ## Methodology
 
