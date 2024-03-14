@@ -53,6 +53,6 @@ npm install
 node ./run_benchmarks.js
 ```
 
-This generates chart images (references in this readme) and [results.json](./results.json) file with raw results.
+This generates chart images (referenced in this readme) and [results.json](./results.json) file with raw results.
 
 I use [grip](https://github.com/joeyespo/grip) to preview markdown locally.
