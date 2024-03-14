@@ -32,14 +32,22 @@ for (const runner in definitions) {
 
   for (const scenarioName in definition.scenarios) {
     process.stdout.write(colors.bold(`${scenarioLabels[scenarioName]}... `))
+    results[runner] ||= {}
 
     const scenario = definition.scenarios[scenarioName]
+
+    if (!scenario) {
+      process.stdout.write('skipped')
+      console.log('')
+      results[runner][scenarioName] = {}
+      continue
+    }
+
     const cmd = `/usr/bin/time -o _result.json -f '${timeFormat}' ${scenario.cmd}`
     execSync(cmd, { stderr: 'inherit' })
 
     const result = readFileSync('_result.json', 'utf8')
 
-    results[runner] ||= {}
     results[runner][scenarioName] = Object.assign(JSON.parse(result), { notes: scenario.notes })
 
     process.stdout.write(result)

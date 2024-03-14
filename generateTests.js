@@ -1,5 +1,5 @@
 import { existsSync, mkdirSync, rmSync, writeFileSync } from "fs"
-import * as glob from 'glob'
+import glob from 'fast-glob'
 
 if (!existsSync('./build')) {
   mkdirSync('./build')
@@ -17,7 +17,7 @@ export default function generateTests(runner, testTemplates) {
     mkdirSync(`./build/${runner}/${template}`)
 
     for (const libFile of libFiles) {
-      const path = libFile.replace('node_modules/', '')
+      const path = libFile.replace('./node_modules/', '')
       const fileName = path.split('/').pop()
       const testFileName = fileName.replace('.js', 'Test.js')
 

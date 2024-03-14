@@ -12,6 +12,8 @@ const chartJSNodeCanvas = new ChartJSNodeCanvas({
 })
 
 async function generateChart(data, fileName, label) {
+  const sortedData = data.sort((a, b) => a.name.localeCompare(b.name))
+
   const chartOptions = {
     type: 'bar',
     plugins: [ ChartDataLabels ],
@@ -23,10 +25,10 @@ async function generateChart(data, fileName, label) {
       }
     },
     data: {
-      labels: data.map(({ name }) => name),
+      labels: sortedData.map(({ name }) => name),
       datasets: [
         {
-          data: data.map(({ time }) => time),
+          data: sortedData.map(({ time }) => time),
           label,
         }
       ]

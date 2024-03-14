@@ -309,8 +309,24 @@ const vitest = {
   }
 }
 
+const baseline = {
+  testTemplates: {
+    importOnly: path => `import '${path}'`,
+  },
+  scenarios: {
+    allTestsFilesImportOnly: {
+      cmd: `node -e "import('fast-glob').then(({ default: fg }) => Promise.all(fg.sync('./build/baseline/importOnly/*Test.js').map(p => import(p))))"`
+    },
+    singleTestFileImportOnly: {
+      cmd: 'node ./build/baseline/importOnly/requestTest.js'
+    },
+    allTestsFilesWithLoad: false
+  }
+}
+
 export const definitions = {
-  node,
+  baseline,
+  'node-builtin': node,
   mocha,
   vitest,
   jest,
@@ -321,7 +337,7 @@ export const definitions = {
 }
 
 export const scenarioLabels = {
-  allTestsFilesImportOnly: 'All tests (no load)',
-  singleTestFileImportOnly: 'Single test file',
-  allTestsFilesWithLoad: 'All tests (with load)'
+  allTestsFilesImportOnly: 'Load all test files',
+  singleTestFileImportOnly: 'Load single test file',
+  allTestsFilesWithLoad: 'Run all test files'
 }

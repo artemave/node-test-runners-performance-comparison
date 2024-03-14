@@ -18,21 +18,21 @@
   },
   "dependencies": {
     "assert-raisins": "github:artemave/assert-raisins",
-    "ava": "^6.1.2",
-    "chart.js": "^3.9.1",
-    "chartjs-node-canvas": "^4.1.6",
-    "chartjs-plugin-datalabels": "^2.2.0",
-    "colors": "^1.4.0",
-    "glob": "latest",
+    "ava": "latest",
+    "chart.js": "latest",
+    "chartjs-node-canvas": "latest",
+    "chartjs-plugin-datalabels": "latest",
+    "colors": "latest",
+    "fast-glob": "latest",
     "jest": "latest",
     "mocha": "latest",
     "sails": "latest",
     "tape": "latest",
     "uvu": "latest",
-    "vitest": "^1.3.1"
+    "vitest": "latest"
   },
   "devDependencies": {
-    "@types/node": "^20.11.26",
-    "eslint": "^8.57.0"
+    "@types/node": "latest",
+    "eslint": "latest"
   }
 }
