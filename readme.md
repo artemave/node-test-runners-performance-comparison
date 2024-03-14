@@ -5,9 +5,9 @@ I've been toying with my [own test runner](https://github.com/artemave/assert-ra
 ## Methodology
 
 The goal is to establish how much overhead a test runner ensues. There are three facets to that (scenarios):
-1. how long does it take to load a single test file
-1. how long does it take to load all test files
-1. how long does it take to run all test files
+1. how long it takes to load a single test file
+1. how long it takes to load all test files
+1. how long it takes to run all test files
 
 To support those there are two types of tests:
 - a blank test that does nothing (used in for 1 and 2)
