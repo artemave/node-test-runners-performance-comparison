@@ -1,6 +1,6 @@
 # Node test runners performance comparison
 
-I have been experimenting with my [own test runner](https://github.com/artemave/assert-raisins), and one of the main ideas was to make it as fast as possible. What better way to assert that than to compare it with other test runners? In the end, however, I find these benchmarks more useful than my test runner, but it still stands among the contenders.
+I have been experimenting with my [own test runner](https://github.com/artemave/assert-raisins), and one of the main ideas was to make it as fast as possible. What better way to assert that than to compare it with other test runners? In the end, I find these benchmarks useful in its own right.
 
 ## Methodology
 
@@ -44,7 +44,8 @@ Scenarios 1 and 2 contain a "baseline" column, which is just a bare node running
 
 #### Notes
 
-Neither Tape nor Uvu support concurrent testing. You can see how they perform better than others in the first two scenarios but fall behind hopelessly in the third one.
+- Neither Tape nor Uvu support concurrent testing. You can see how they perform better than others in the first two scenarios but fall behind hopelessly in the third one.
+- vitest is using a faster (non-default) concurrency option. It's much slower with the default one.
 
 ## Usage
 
