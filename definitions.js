@@ -297,13 +297,28 @@ const vitest = {
   scenarios: {
     allTestsFilesImportOnly: {
       cmd: './node_modules/.bin/vitest build/vitest/importOnly',
-      notes: 'Faster concurrency option (non-default)'
     },
     singleTestFileImportOnly: {
       cmd: './node_modules/.bin/vitest build/vitest/importOnly/requestTest.js'
     },
     allTestsFilesWithLoad: {
       cmd: './node_modules/.bin/vitest build/vitest/withLoad',
+    }
+  }
+}
+
+const vitestNoIsolation = {
+  testTemplates: vitest.testTemplates,
+  scenarios: {
+    allTestsFilesImportOnly: {
+      cmd: './node_modules/.bin/vitest --no-isolate build/vitest/importOnly',
+      notes: 'Faster concurrency option (non-default)'
+    },
+    singleTestFileImportOnly: {
+      cmd: './node_modules/.bin/vitest --no-isolate build/vitest/importOnly/requestTest.js'
+    },
+    allTestsFilesWithLoad: {
+      cmd: './node_modules/.bin/vitest --no-isolate build/vitest/withLoad',
       notes: 'Faster concurrency option (non-default)'
     }
   }
@@ -329,6 +344,7 @@ export const definitions = {
   'node-builtin': node,
   mocha,
   vitest,
+  'vitest (no isolate)': vitestNoIsolation,
   jest,
   tape,
   ava,

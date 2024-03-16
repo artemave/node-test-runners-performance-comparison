@@ -18,6 +18,7 @@ async function generateChart(data, fileName, label) {
     type: 'bar',
     plugins: [ ChartDataLabels ],
     options: {
+      indexAxis: 'y',
       plugins: {
         datalabels: {
           color: '#36A2EB',

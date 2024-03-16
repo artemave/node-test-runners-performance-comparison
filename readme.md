@@ -45,7 +45,6 @@ Scenarios 1 and 2 contain a "baseline" column, which is just a bare node running
 #### Notes
 
 - Neither Tape nor Uvu support concurrent testing. You can see how they perform better than others in the first two scenarios but fall behind hopelessly in the third one.
-- vitest is using a faster (non-default) concurrency option. It's much slower with the default one.
 
 ## Usage
 
