@@ -1,3 +1,4 @@
 node_modules
 build
 _result.json
+.mise.toml
