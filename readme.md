@@ -27,7 +27,6 @@ Scenarios 1 and 2 contain a "baseline" column, which is just bare node running t
 - [vitest](https://vitest.dev/)
 - [tape](https://github.com/tape-testing/tape)
 - [ava](https://github.com/avajs/ava) (disabled atm because it's hanging on node > 21)
-- [uvu](https://github.com/lukeed/uvu)
 - [assert-raisins](https://github.com/artemave/assert-raisins)
 
 ### Results on my machine (seconds)

@@ -1,46 +1,3 @@
-const uvu = {
-  testTemplates: {
-    importOnly: path => `import '${path}'
-      import { test } from 'uvu'
-      import * as assert from 'uvu/assert'
-
-      test('${path} works', () => {
-        assert.is(1, 1)
-      })
-      test.run()`,
-    withLoad: path => `import '${path}'
-      import { test } from 'uvu'
-      import * as assert from 'uvu/assert'
-      import { randomBytes } from 'crypto'
-
-      test('${path} io wait', async () => {
-        await new Promise((resolve, reject) => {
-          setTimeout(resolve, 30)
-        })
-        assert.is(1, 1)
-      })
-
-      test('${path} cpu load', () => {
-        randomBytes(99999999)
-        assert.is(1, 1)
-      })
-      test.run()`,
-  },
-  scenarios: {
-    allTestsFilesImportOnly: {
-      cmd: './node_modules/.bin/uvu ./build/uvu/importOnly',
-      notes: 'No concurrency',
-    },
-    singleTestFileImportOnly: {
-      cmd: 'node ./build/uvu/importOnly/requestTest.js'
-    },
-    allTestsFilesWithLoad: {
-      cmd: './node_modules/.bin/uvu ./build/uvu/withLoad',
-      notes: 'No concurrency',
-    }
-  }
-}
-
 const node = {
   testTemplates: {
     importOnly: path => `import '${path}'
@@ -348,7 +305,6 @@ export const definitions = {
   jest,
   tape,
   // ava,
-  uvu,
   'assert-raisins': ars
 }
 

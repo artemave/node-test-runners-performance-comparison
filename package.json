@@ -26,7 +26,6 @@
     "mocha": "latest",
     "sails": "latest",
     "tape": "latest",
-    "uvu": "latest",
     "vega": "^5.31.0",
     "vega-lite": "^5.23.0",
     "vitest": "latest"
