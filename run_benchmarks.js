@@ -1,5 +1,6 @@
-import { execSync } from 'child_process'
-import { readFileSync, writeFileSync } from 'fs'
+import { execSync } from 'node:child_process'
+import { performance } from 'node:perf_hooks'
+import { writeFileSync } from 'node:fs'
 import colors from 'colors'
 import { definitions, scenarioLabels } from './definitions.js'
 import generateTests from './generateTests.js'
@@ -12,13 +13,6 @@ async function wait(ms) {
 }
 
 const results = {}
-
-const timeFormat = JSON.stringify({
-  total: "%e",
-  system: "%S",
-  user: "%U",
-  cpu: "%P"
-})
 
 for (const runner in definitions) {
   console.log(colors.cyan.bold(`************ ${runner} ************`))
@@ -40,14 +34,16 @@ for (const runner in definitions) {
       continue
     }
 
-    const cmd = `time -o _result.json -f '${timeFormat}' ${scenario.cmd}`
-    execSync(cmd, { stderr: 'inherit' })
+    let start = performance.now()
+    execSync(scenario.cmd, { stderr: 'inherit' })
 
-    const result = readFileSync('_result.json', 'utf8')
+    const result = {
+      ms: Math.round(performance.now() - start),
+      notes: scenario.notes
+    }
 
-    results[runner][scenarioName] = Object.assign(JSON.parse(result), { notes: scenario.notes })
-
-    process.stdout.write(result)
+    results[runner][scenarioName] = result
+    console.log(result)
 
     await wait(1000)
   }

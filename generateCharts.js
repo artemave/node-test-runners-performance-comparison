@@ -7,6 +7,7 @@ async function generateChart(data, fileName, label) {
   const sortedData = data.sort((a, b) => a.name.localeCompare(b.name))
 
   const vegaLiteSpec = {
+    title: label,
     data: {
       values: sortedData
     },
@@ -14,14 +15,14 @@ async function generateChart(data, fileName, label) {
     width: 400,
     encoding: {
       y: { field: 'name', type: 'nominal', axis: { title: 'Runner' } },
-      x: { field: 'time', type: 'quantitative', axis: { title: label } }
+      x: { field: 'ms', type: 'quantitative', axis: { title: 'ms' } }
     },
     layer: [
       {
         mark: 'bar',
         encoding: {
           y: { field: 'name', type: 'nominal', axis: { title: 'Runner' } },
-          x: { field: 'time', type: 'quantitative', axis: { title: label } }
+          x: { field: 'ms', type: 'quantitative', axis: { title: 'ms' } }
         }
       },
       {
@@ -32,7 +33,7 @@ async function generateChart(data, fileName, label) {
           dx: 3 // Adjust the position of the text
         },
         encoding: {
-          text: { field: 'time', type: 'quantitative' }
+          text: { field: 'ms', type: 'quantitative' }
         }
       }
     ]
@@ -55,7 +56,7 @@ export default async function generateCharts(results) {
       const scenarioResults = runnerResults[scenario]
 
       resultsGroupedByScenario[scenario] ||= []
-      resultsGroupedByScenario[scenario].push({ name: runner, time: scenarioResults.total })
+      resultsGroupedByScenario[scenario].push({ name: runner, ms: scenarioResults.ms })
     }
   }
 
