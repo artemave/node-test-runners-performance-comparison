@@ -13,7 +13,7 @@ To support these, there are two types of tests:
 - a blank test that does nothing (used for 1 and 2)
 - a test file with some async and CPU load (used for 3)
 
-A set of test files is generated for each test runner and each test type. To generate a set, I take every `.js` file in `./node_modules/sails/lib` ([Sails](https://sailsjs.com/) is just a project with many files in this context). To be more realistic, every test file imports its `lib` counterpart.
+A set of test files is generated for each test runner and each test type. To generate a set, I take every `.js` file in `./node_modules/sails/lib` ([Sails](https://sailsjs.com/) is just a project with lots of files). To be more realistic, every test file imports its `lib` counterpart.
 
 Scenarios 1 and 2 contain a "baseline" column, which is just bare node running the same payload.
 
@@ -26,7 +26,7 @@ Scenarios 1 and 2 contain a "baseline" column, which is just bare node running t
 - [jest](https://jestjs.io/)
 - [vitest](https://vitest.dev/)
 - [tape](https://github.com/tape-testing/tape)
-- [ava](https://github.com/avajs/ava) (disabled atm because it's hanging on node > 21)
+- [ava](https://github.com/avajs/ava) (disabled atm because it's hanging on node > 21 🤷)
 - [assert-raisins](https://github.com/artemave/assert-raisins)
 
 ### Results on my machine (seconds)
