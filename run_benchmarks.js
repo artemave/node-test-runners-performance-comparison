@@ -1,5 +1,5 @@
 import { execSync } from 'child_process'
-import { existsSync, readFileSync, writeFileSync } from 'fs'
+import { readFileSync, writeFileSync } from 'fs'
 import colors from 'colors'
 import { definitions, scenarioLabels } from './definitions.js'
 import generateTests from './generateTests.js'
@@ -11,10 +11,7 @@ async function wait(ms) {
   })
 }
 
-let results = {}
-if (existsSync('./results.json')) {
-  results = JSON.parse(readFileSync('./results.json', 'utf8'))
-}
+const results = {}
 
 const timeFormat = JSON.stringify({
   total: "%e",
@@ -43,7 +40,7 @@ for (const runner in definitions) {
       continue
     }
 
-    const cmd = `/usr/bin/time -o _result.json -f '${timeFormat}' ${scenario.cmd}`
+    const cmd = `time -o _result.json -f '${timeFormat}' ${scenario.cmd}`
     execSync(cmd, { stderr: 'inherit' })
 
     const result = readFileSync('_result.json', 'utf8')

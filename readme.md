@@ -15,7 +15,7 @@ To support these, there are two types of tests:
 
 A set of test files is generated for each test runner and each test type. To generate a set, I take every `.js` file in `./node_modules/sails/lib` ([Sails](https://sailsjs.com/) is just a project with many files in this context). To be more realistic, every test file imports its `lib` counterpart.
 
-Scenarios 1 and 2 contain a "baseline" column, which is just a bare node running the same payload.
+Scenarios 1 and 2 contain a "baseline" column, which is just bare node running the same payload.
 
 > Scenario 3 involves concurrency, so picking the right "baseline" technology is not straightforward and hence remains a TODO.
 
@@ -26,20 +26,20 @@ Scenarios 1 and 2 contain a "baseline" column, which is just a bare node running
 - [jest](https://jestjs.io/)
 - [vitest](https://vitest.dev/)
 - [tape](https://github.com/tape-testing/tape)
-- [ava](https://github.com/avajs/ava)
+- [ava](https://github.com/avajs/ava) (disabled atm because it's hanging on node > 21)
 - [uvu](https://github.com/lukeed/uvu)
 - [assert-raisins](https://github.com/artemave/assert-raisins)
 
 ### Results on my machine (seconds)
 
 <p align="center">
-  <img width="800" src="./singleTestFileImportOnly.png"/>
+  <img width="800" src="./singleTestFileImportOnly.svg"/>
 </p>
 <p align="center">
-  <img width="800" src="./allTestsFilesImportOnly.png"/>
+  <img width="800" src="./allTestsFilesImportOnly.svg"/>
 </p>
 <p align="center">
-  <img width="800" src="./allTestsFilesWithLoad.png"/>
+  <img width="800" src="./allTestsFilesWithLoad.svg"/>
 </p>
 
 #### Notes

@@ -1,203 +1,183 @@
 {
   "baseline": {
     "allTestsFilesImportOnly": {
-      "total": "0.23",
-      "system": "0.05",
-      "user": "0.25",
-      "cpu": "126%"
+      "total": "0.26",
+      "system": "0.07",
+      "user": "0.35",
+      "cpu": "160%"
     },
     "singleTestFileImportOnly": {
-      "total": "0.04",
+      "total": "0.03",
       "system": "0.01",
       "user": "0.02",
-      "cpu": "102%"
+      "cpu": "107%"
     },
     "allTestsFilesWithLoad": {}
   },
   "node-builtin": {
     "allTestsFilesImportOnly": {
-      "total": "0.78",
-      "system": "2.24",
-      "user": "7.47",
-      "cpu": "1244%"
+      "total": "0.85",
+      "system": "2.58",
+      "user": "8.02",
+      "cpu": "1248%"
     },
     "singleTestFileImportOnly": {
-      "total": "0.08",
+      "total": "0.09",
       "system": "0.03",
-      "user": "0.06",
-      "cpu": "112%"
+      "user": "0.07",
+      "cpu": "113%"
     },
     "allTestsFilesWithLoad": {
-      "total": "1.64",
-      "system": "9.11",
-      "user": "11.00",
-      "cpu": "1224%"
+      "total": "1.70",
+      "system": "10.04",
+      "user": "11.35",
+      "cpu": "1253%"
     }
   },
   "mocha": {
     "allTestsFilesImportOnly": {
-      "total": "0.56",
-      "system": "1.00",
-      "user": "4.01",
-      "cpu": "893%"
+      "total": "0.66",
+      "system": "1.12",
+      "user": "5.39",
+      "cpu": "976%"
     },
     "singleTestFileImportOnly": {
       "total": "0.12",
       "system": "0.03",
       "user": "0.11",
-      "cpu": "116%"
+      "cpu": "118%"
     },
     "allTestsFilesWithLoad": {
-      "total": "1.29",
-      "system": "7.59",
-      "user": "7.81",
-      "cpu": "1189%"
+      "total": "1.69",
+      "system": "11.93",
+      "user": "9.06",
+      "cpu": "1241%"
+    }
+  },
+  "vitest": {
+    "allTestsFilesImportOnly": {
+      "total": "2.83",
+      "system": "8.37",
+      "user": "26.55",
+      "cpu": "1230%"
+    },
+    "singleTestFileImportOnly": {
+      "total": "0.55",
+      "system": "1.00",
+      "user": "2.23",
+      "cpu": "588%"
+    },
+    "allTestsFilesWithLoad": {
+      "total": "3.70",
+      "system": "14.69",
+      "user": "31.94",
+      "cpu": "1260%"
+    }
+  },
+  "vitest (no isolate)": {
+    "allTestsFilesImportOnly": {
+      "total": "1.02",
+      "system": "1.96",
+      "user": "7.20",
+      "cpu": "894%",
+      "notes": "Faster concurrency option (non-default)"
+    },
+    "singleTestFileImportOnly": {
+      "total": "0.59",
+      "system": "1.25",
+      "user": "2.66",
+      "cpu": "661%"
+    },
+    "allTestsFilesWithLoad": {
+      "total": "1.93",
+      "system": "8.95",
+      "user": "12.25",
+      "cpu": "1095%",
+      "notes": "Faster concurrency option (non-default)"
     }
   },
   "jest": {
     "allTestsFilesImportOnly": {
-      "total": "2.14",
-      "system": "3.67",
-      "user": "22.94",
-      "cpu": "1241%"
+      "total": "2.28",
+      "system": "4.13",
+      "user": "23.68",
+      "cpu": "1219%"
     },
     "singleTestFileImportOnly": {
-      "total": "0.48",
-      "system": "0.29",
+      "total": "0.50",
+      "system": "0.37",
       "user": "0.78",
-      "cpu": "223%"
+      "cpu": "228%"
     },
     "allTestsFilesWithLoad": {
-      "total": "3.00",
-      "system": "9.79",
-      "user": "29.46",
-      "cpu": "1307%"
+      "total": "3.22",
+      "system": "10.77",
+      "user": "29.76",
+      "cpu": "1258%"
     }
   },
   "tape": {
     "allTestsFilesImportOnly": {
-      "total": "0.29",
-      "system": "0.08",
-      "user": "0.28",
-      "cpu": "124%",
+      "total": "0.32",
+      "system": "0.09",
+      "user": "0.43",
+      "cpu": "161%",
       "notes": "No concurrency"
     },
     "singleTestFileImportOnly": {
       "total": "0.08",
       "system": "0.02",
-      "user": "0.07",
-      "cpu": "120%"
+      "user": "0.08",
+      "cpu": "121%"
     },
     "allTestsFilesWithLoad": {
-      "total": "7.33",
-      "system": "4.24",
-      "user": "3.51",
-      "cpu": "105%",
+      "total": "7.28",
+      "system": "4.28",
+      "user": "3.73",
+      "cpu": "109%",
       "notes": "No concurrency"
-    }
-  },
-  "ava": {
-    "allTestsFilesImportOnly": {
-      "total": "2.34",
-      "system": "4.22",
-      "user": "24.44",
-      "cpu": "1221%"
-    },
-    "singleTestFileImportOnly": {
-      "total": "0.34",
-      "system": "0.08",
-      "user": "0.35",
-      "cpu": "125%"
-    },
-    "allTestsFilesWithLoad": {
-      "total": "3.78",
-      "system": "10.45",
-      "user": "29.84",
-      "cpu": "1065%"
     }
   },
   "uvu": {
     "allTestsFilesImportOnly": {
-      "total": "0.25",
-      "system": "0.06",
-      "user": "0.25",
-      "cpu": "124%",
+      "total": "0.29",
+      "system": "0.10",
+      "user": "0.36",
+      "cpu": "162%",
       "notes": "No concurrency"
     },
     "singleTestFileImportOnly": {
       "total": "0.04",
-      "system": "0.01",
-      "user": "0.03",
-      "cpu": "108%"
+      "system": "0.02",
+      "user": "0.02",
+      "cpu": "106%"
     },
     "allTestsFilesWithLoad": {
-      "total": "7.06",
-      "system": "4.11",
-      "user": "2.92",
-      "cpu": "99%",
+      "total": "7.20",
+      "system": "4.45",
+      "user": "3.07",
+      "cpu": "104%",
       "notes": "No concurrency"
     }
   },
   "assert-raisins": {
     "allTestsFilesImportOnly": {
-      "total": "0.37",
-      "system": "0.49",
-      "user": "2.38",
-      "cpu": "764%"
+      "total": "0.40",
+      "system": "0.51",
+      "user": "2.53",
+      "cpu": "750%"
     },
     "singleTestFileImportOnly": {
-      "total": "0.06",
+      "total": "0.07",
       "system": "0.02",
-      "user": "0.05",
-      "cpu": "123%"
+      "user": "0.06",
+      "cpu": "117%"
     },
     "allTestsFilesWithLoad": {
-      "total": "1.44",
-      "system": "6.55",
-      "user": "5.71",
-      "cpu": "850%"
-    }
-  },
-  "vitest": {
-    "allTestsFilesImportOnly": {
-      "total": "2.34",
-      "system": "6.97",
-      "user": "21.92",
-      "cpu": "1231%"
-    },
-    "singleTestFileImportOnly": {
-      "total": "0.48",
-      "system": "0.82",
-      "user": "2.02",
-      "cpu": "587%"
-    },
-    "allTestsFilesWithLoad": {
-      "total": "3.19",
-      "system": "13.81",
-      "user": "26.11",
-      "cpu": "1250%"
-    }
-  },
-  "vitest (no isolate)": {
-    "allTestsFilesImportOnly": {
-      "total": "0.94",
-      "system": "1.67",
-      "user": "5.77",
-      "cpu": "787%",
-      "notes": "Faster concurrency option (non-default)"
-    },
-    "singleTestFileImportOnly": {
-      "total": "0.52",
-      "system": "1.07",
-      "user": "2.30",
-      "cpu": "648%"
-    },
-    "allTestsFilesWithLoad": {
-      "total": "1.79",
-      "system": "8.75",
-      "user": "9.81",
-      "cpu": "1033%",
-      "notes": "Faster concurrency option (non-default)"
+      "total": "1.53",
+      "system": "7.31",
+      "user": "7.35",
+      "cpu": "956%"
     }
   }
 }

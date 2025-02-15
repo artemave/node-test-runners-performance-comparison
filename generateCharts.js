@@ -1,42 +1,26 @@
 import { writeFileSync } from "fs"
-import { ChartJSNodeCanvas } from 'chartjs-node-canvas'
-import ChartDataLabels from 'chartjs-plugin-datalabels'
+import vegaLite from 'vega-lite'
+import vega from 'vega'
 import { scenarioLabels } from "./definitions.js"
-
-
-// This must be created only once https://github.com/SeanSobey/ChartjsNodeCanvas/issues/9
-const chartJSNodeCanvas = new ChartJSNodeCanvas({
-  width: 800,
-  height: 400,
-  backgroundColour: 'white',
-})
 
 async function generateChart(data, fileName, label) {
   const sortedData = data.sort((a, b) => a.name.localeCompare(b.name))
 
-  const chartOptions = {
-    type: 'bar',
-    plugins: [ ChartDataLabels ],
-    options: {
-      indexAxis: 'y',
-      plugins: {
-        datalabels: {
-          color: '#36A2EB',
-        }
-      }
-    },
+  const vegaLiteSpec = {
     data: {
-      labels: sortedData.map(({ name }) => name),
-      datasets: [
-        {
-          data: sortedData.map(({ time }) => time),
-          label,
-        }
-      ]
+      values: sortedData
+    },
+    mark: 'bar',
+    encoding: {
+      y: { field: 'name', type: 'nominal', axis: { title: 'Runner' } },
+      x: { field: 'time', type: 'quantitative', axis: { title: label } }
     }
   }
 
-  const image = await chartJSNodeCanvas.renderToBuffer(chartOptions)
+  const { spec } = vegaLite.compile(vegaLiteSpec)
+  const view = new vega.View(vega.parse(spec), { renderer: 'none' })
+  const image = await view.toSVG()
+
   writeFileSync(fileName, image)
 }
 
@@ -55,6 +39,6 @@ export default async function generateCharts(results) {
   }
 
   for (const scenario in resultsGroupedByScenario) {
-    await generateChart(resultsGroupedByScenario[scenario], scenario + '.png', scenarioLabels[scenario])
+    await generateChart(resultsGroupedByScenario[scenario], scenario + '.svg', scenarioLabels[scenario])
   }
 }

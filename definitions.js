@@ -347,7 +347,7 @@ export const definitions = {
   'vitest (no isolate)': vitestNoIsolation,
   jest,
   tape,
-  ava,
+  // ava,
   uvu,
   'assert-raisins': ars
 }

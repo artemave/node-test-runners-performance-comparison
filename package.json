@@ -1,8 +1,5 @@
 {
   "name": "node-test-runners-benchmark",
-  "engines": {
-    "node": "^21.6"
-  },
   "version": "1.0.0",
   "type": "module",
   "license": "MIT",
@@ -22,9 +19,7 @@
   "dependencies": {
     "assert-raisins": "github:artemave/assert-raisins",
     "ava": "latest",
-    "chart.js": "latest",
-    "chartjs-node-canvas": "github:artemave/ChartjsNodeCanvas",
-    "chartjs-plugin-datalabels": "latest",
+    "canvas": "^3.1.0",
     "colors": "latest",
     "fast-glob": "latest",
     "jest": "latest",
@@ -32,6 +27,8 @@
     "sails": "latest",
     "tape": "latest",
     "uvu": "latest",
+    "vega": "^5.31.0",
+    "vega-lite": "^5.23.0",
     "vitest": "latest"
   },
   "devDependencies": {
