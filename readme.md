@@ -43,7 +43,7 @@ Scenarios 1 and 2 contain a "baseline" column, which is just bare node running t
 
 #### Notes
 
-- Neither Tape nor Uvu support concurrent testing. You can see how they perform better than others in the first two scenarios but fall behind hopelessly in the third one.
+- Tape does not support concurrent testing. You can see how it performs better than others on the first two scenarios but falls behind hopelessly on the third one.
 
 ## Usage
 

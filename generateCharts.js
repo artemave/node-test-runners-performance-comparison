@@ -11,10 +11,31 @@ async function generateChart(data, fileName, label) {
       values: sortedData
     },
     mark: 'bar',
+    width: 400,
     encoding: {
       y: { field: 'name', type: 'nominal', axis: { title: 'Runner' } },
       x: { field: 'time', type: 'quantitative', axis: { title: label } }
-    }
+    },
+    layer: [
+      {
+        mark: 'bar',
+        encoding: {
+          y: { field: 'name', type: 'nominal', axis: { title: 'Runner' } },
+          x: { field: 'time', type: 'quantitative', axis: { title: label } }
+        }
+      },
+      {
+        mark: {
+          type: 'text',
+          align: 'left',
+          baseline: 'middle',
+          dx: 3 // Adjust the position of the text
+        },
+        encoding: {
+          text: { field: 'time', type: 'quantitative' }
+        }
+      }
+    ]
   }
 
   const { spec } = vegaLite.compile(vegaLiteSpec)
