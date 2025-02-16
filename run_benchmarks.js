@@ -19,7 +19,7 @@ for (const runner in definitions) {
 
   const definition = definitions[runner]
 
-  generateTests(runner, definition.testTemplates)
+  generateTests(runner, definition.testTemplates, definition.cjs)
 
   for (const scenarioName in definition.scenarios) {
     process.stdout.write(colors.bold(`${scenarioLabels[scenarioName]}... `))

@@ -1,7 +1,7 @@
 {
   "baseline": {
     "allTestsFilesImportOnly": {
-      "ms": 290
+      "ms": 281
     },
     "singleTestFileImportOnly": {
       "ms": 42
@@ -10,83 +10,94 @@
   },
   "node-builtin": {
     "allTestsFilesImportOnly": {
-      "ms": 854
+      "ms": 825
     },
     "singleTestFileImportOnly": {
-      "ms": 91
+      "ms": 92
     },
     "allTestsFilesWithLoad": {
-      "ms": 1685
+      "ms": 1839
     }
   },
   "mocha": {
     "allTestsFilesImportOnly": {
-      "ms": 615
+      "ms": 612
     },
     "singleTestFileImportOnly": {
-      "ms": 127
+      "ms": 131
     },
     "allTestsFilesWithLoad": {
-      "ms": 1376
+      "ms": 1441
     }
   },
   "vitest": {
     "allTestsFilesImportOnly": {
-      "ms": 2738
+      "ms": 2758
     },
     "singleTestFileImportOnly": {
-      "ms": 554
+      "ms": 547
     },
     "allTestsFilesWithLoad": {
-      "ms": 3776
+      "ms": 3769
     }
   },
   "vitest (no isolate)": {
     "allTestsFilesImportOnly": {
-      "ms": 1118,
+      "ms": 1067,
       "notes": "Faster concurrency option (non-default)"
     },
     "singleTestFileImportOnly": {
-      "ms": 657
+      "ms": 624
     },
     "allTestsFilesWithLoad": {
-      "ms": 1972,
+      "ms": 1877,
       "notes": "Faster concurrency option (non-default)"
+    }
+  },
+  "jest (esm)": {
+    "allTestsFilesImportOnly": {
+      "ms": 2336
+    },
+    "singleTestFileImportOnly": {
+      "ms": 448
+    },
+    "allTestsFilesWithLoad": {
+      "ms": 3162
     }
   },
   "jest": {
     "allTestsFilesImportOnly": {
-      "ms": 2291
+      "ms": 1806
     },
     "singleTestFileImportOnly": {
-      "ms": 424
+      "ms": 449
     },
     "allTestsFilesWithLoad": {
-      "ms": 3123
+      "ms": 2546
     }
   },
   "tape": {
     "allTestsFilesImportOnly": {
-      "ms": 328,
+      "ms": 325,
       "notes": "No concurrency"
     },
     "singleTestFileImportOnly": {
-      "ms": 93
+      "ms": 92
     },
     "allTestsFilesWithLoad": {
-      "ms": 7384,
+      "ms": 7249,
       "notes": "No concurrency"
     }
   },
   "assert-raisins": {
     "allTestsFilesImportOnly": {
-      "ms": 416
+      "ms": 412
     },
     "singleTestFileImportOnly": {
-      "ms": 75
+      "ms": 72
     },
     "allTestsFilesWithLoad": {
-      "ms": 1591
+      "ms": 1533
     }
   }
 }

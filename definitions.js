@@ -74,7 +74,43 @@ const ars = {
   }
 }
 
-const jest = {
+const jestCjs = {
+  cjs: true,
+  testTemplates: {
+    importOnly: path => `require('${path}')
+
+      test('${path} works', () => {
+        expect(1).toBe(1)
+      })`,
+    withLoad: path => `require('${path}')
+      const { randomBytes } = require('crypto')
+
+      test('${path} io wait', async () => {
+        await new Promise((resolve, reject) => {
+          setTimeout(resolve, 30)
+        })
+        expect(1).toBe(1)
+      })
+
+      test('${path} cpu load', () => {
+        randomBytes(99999999)
+        expect(1).toBe(1)
+      })`,
+  },
+  scenarios: {
+    allTestsFilesImportOnly: {
+      cmd: 'node node_modules/jest/bin/jest.js --testRegex "build/jest/importOnly"',
+    },
+    singleTestFileImportOnly: {
+      cmd: 'node node_modules/jest/bin/jest.js --testRegex "build/jest/importOnly/requestTest.cjs"',
+    },
+    allTestsFilesWithLoad: {
+      cmd: 'node node_modules/jest/bin/jest.js --testRegex "build/jest/withLoad"',
+    }
+  }
+}
+
+const jestEsm = {
   testTemplates: {
     importOnly: path => `import '${path}'
       test('${path} works', () => {
@@ -96,13 +132,13 @@ const jest = {
   },
   scenarios: {
     allTestsFilesImportOnly: {
-      cmd: 'node --experimental-vm-modules node_modules/jest/bin/jest.js --testRegex "build/jest/importOnly"'
+      cmd: 'node --experimental-vm-modules node_modules/jest/bin/jest.js --config=jestEsm.config.cjs --testRegex "build/jest__esm_/importOnly"'
     },
     singleTestFileImportOnly: {
-      cmd: 'node --experimental-vm-modules node_modules/jest/bin/jest.js --testRegex "build/jest/importOnly/requestTest.js"'
+      cmd: 'node --experimental-vm-modules node_modules/jest/bin/jest.js --config=jestEsm.config.cjs --testRegex "build/jest__esm_/importOnly/requestTest.js"'
     },
     allTestsFilesWithLoad: {
-      cmd: 'node --experimental-vm-modules node_modules/jest/bin/jest.js --testRegex "build/jest/withLoad"'
+      cmd: 'node --experimental-vm-modules node_modules/jest/bin/jest.js --config=jestEsm.config.cjs --testRegex "build/jest__esm_/withLoad"'
     }
   }
 }
@@ -302,7 +338,8 @@ export const definitions = {
   mocha,
   vitest,
   'vitest (no isolate)': vitestNoIsolation,
-  jest,
+  'jest (esm)': jestEsm,
+  jest: jestCjs,
   tape,
   // ava,
   'assert-raisins': ars

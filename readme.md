@@ -26,7 +26,7 @@ Scenarios 1 and 2 contain a "baseline" column, which is just bare node running t
 - [jest](https://jestjs.io/)
 - [vitest](https://vitest.dev/)
 - [tape](https://github.com/tape-testing/tape)
-- [ava](https://github.com/avajs/ava) (disabled atm because it's hanging on node > 21 🤷)
+- ~~[ava](https://github.com/avajs/ava)~~ (disabled atm because it's hanging on node > 21 🤷)
 - [assert-raisins](https://github.com/artemave/assert-raisins)
 
 ### Results on my machine (seconds)
@@ -43,7 +43,7 @@ Scenarios 1 and 2 contain a "baseline" column, which is just bare node running t
 
 #### Notes
 
-- Tape does not support concurrent testing. You can see how it performs better than others on the first two scenarios but falls behind hopelessly on the third one.
+- Tape does not support concurrent testing. You can see how it performs better than the others to "load all tests" but falls behind hopelessly when it comes to "running all all tests".
 
 ## Usage
 
