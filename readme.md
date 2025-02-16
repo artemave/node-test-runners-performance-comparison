@@ -1,6 +1,6 @@
 # Node test runners performance comparison
 
-I have been experimenting with my [own test runner](https://github.com/artemave/assert-raisins), and one of the main ideas was to make it as fast as possible. What better way to assert that than to compare it with other test runners? In the end, I find these benchmarks useful in its own right.
+I have been experimenting with my [own test runner](https://github.com/artemave/assert-raisins), and one of the main ideas was to make it as fast as possible. What better way to assert that than to compare it with other test runners? In the end, I found these benchmarks interesting in their own right, hence this repo.
 
 ## Methodology
 
@@ -13,7 +13,7 @@ To support these, there are two types of tests:
 - a blank test that does nothing (used for 1 and 2)
 - a test file with some async and CPU load (used for 3)
 
-A set of test files is generated for each test runner and each test type. To generate a set, I take every `.js` file in `./node_modules/sails/lib` ([Sails](https://sailsjs.com/) is just a project with lots of files). To be more realistic, every test file imports its `lib` counterpart.
+A set of test files is generated for each test runner and each test type. To generate a set, for every `.js` file in `./node_modules/sails/lib` ([Sails](https://sailsjs.com/) is just a project with lots of files), a corresponding "test" file is generated. In order to simulate "import" load, every test file imports its `lib` counterpart.
 
 Scenarios 1 and 2 contain a "baseline" column, which is just bare node running the same payload.
 
