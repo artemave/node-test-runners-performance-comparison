@@ -19,6 +19,7 @@
   "dependencies": {
     "assert-raisins": "github:artemave/assert-raisins",
     "ava": "latest",
+    "bun": "^1.2.2",
     "canvas": "^3.1.0",
     "colors": "latest",
     "fast-glob": "latest",

@@ -29,6 +29,10 @@ Scenarios 1 and 2 contain a "baseline" column, which is just bare node running t
 - ~~[ava](https://github.com/avajs/ava)~~ (disabled atm because it's hanging on node > 21 🤷)
 - [assert-raisins](https://github.com/artemave/assert-raisins)
 
+Also for good measure:
+
+- [bun test](https://bun.sh/docs/cli/test)
+
 ### Results on my machine (seconds)
 
 <p align="center">

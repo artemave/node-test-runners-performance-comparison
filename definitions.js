@@ -36,6 +36,43 @@ const node = {
   }
 }
 
+const bun = {
+  testTemplates: {
+    importOnly: path => `import '${path}'
+      import { expect, test } from "bun:test"
+
+      test('${path} works', () => {
+        expect(2).toBe(2)
+      })
+    `,
+    withLoad: path => `import '${path}'
+      import { expect, test } from "bun:test"
+      import { randomBytes } from 'crypto'
+
+      test('${path} io wait', async () => {
+        await new Promise((resolve, reject) => {
+          setTimeout(resolve, 30)
+        })
+      })
+
+      test('${path} cpu load', () => {
+        randomBytes(99999999)
+        expect(2).toBe(2)
+      })`,
+  },
+  scenarios: {
+    allTestsFilesImportOnly: {
+      cmd: './node_modules/.bin/bun test ./build/bun/importOnly/*Test.js'
+    },
+    singleTestFileImportOnly: {
+      cmd: './node_modules/.bin/bun test ./build/bun/importOnly/requestTest.js'
+    },
+    allTestsFilesWithLoad: {
+      cmd: './node_modules/.bin/bun test ./build/bun/withLoad/*Test.js'
+    }
+  }
+}
+
 const ars = {
   testTemplates: {
     importOnly: path => `import '${path}'
@@ -342,6 +379,7 @@ export const definitions = {
   jest: jestCjs,
   tape,
   // ava,
+  bun,
   'assert-raisins': ars
 }
 
