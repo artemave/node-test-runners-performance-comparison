@@ -60,4 +60,4 @@ node ./run_benchmarks.js
 
 This generates test sets, runs benchmarks, and generates chart images (sourced in this readme), and also [results.json](./results.json) file with raw results.
 
-I then use [grip](https://github.com/joeyespo/grip) to preview the readme locally.
+I then use [grip](https://github.com/joeyespo/grip) to preview the readme with the updated charts locally.
