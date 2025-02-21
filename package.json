@@ -22,6 +22,7 @@
     "bun": "^1.2.2",
     "canvas": "^3.1.0",
     "colors": "latest",
+    "deno": "^2.2.1",
     "fast-glob": "latest",
     "jest": "latest",
     "mocha": "latest",

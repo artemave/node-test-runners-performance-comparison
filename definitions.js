@@ -36,6 +36,43 @@ const node = {
   }
 }
 
+const deno = {
+  testTemplates: {
+    importOnly: path => `import '${path}'
+      import { assertEquals } from "jsr:@std/assert"
+
+      Deno.test('${path} works', () => {
+        assertEquals(2, 2)
+      })
+    `,
+    withLoad: path => `import '${path}'
+      import { assertEquals } from "jsr:@std/assert"
+      import { randomBytes } from 'node:crypto'
+
+      Deno.test('${path} io wait', async () => {
+        await new Promise((resolve, reject) => {
+          setTimeout(resolve, 30)
+        })
+      })
+
+      Deno.test('${path} cpu load', () => {
+        randomBytes(99999999)
+        assertEquals(2, 2)
+      })`,
+  },
+  scenarios: {
+    allTestsFilesImportOnly: {
+      cmd: './node_modules/.bin/deno test --parallel --allow-env ./build/deno/importOnly/*Test.js'
+    },
+    singleTestFileImportOnly: {
+      cmd: './node_modules/.bin/deno test ./build/deno/importOnly/requestTest.js'
+    },
+    allTestsFilesWithLoad: {
+      cmd: './node_modules/.bin/deno test --parallel --allow-env ./build/deno/withLoad/*Test.js'
+    }
+  }
+}
+
 const bun = {
   testTemplates: {
     importOnly: path => `import '${path}'
@@ -380,6 +417,7 @@ export const definitions = {
   tape,
   // ava,
   bun,
+  deno,
   'assert-raisins': ars
 }
 

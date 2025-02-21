@@ -15,7 +15,11 @@ async function generateChart(data, fileName, label) {
     width: 400,
     encoding: {
       y: { field: 'name', type: 'nominal', axis: { title: 'Runner' } },
-      x: { field: 'ms', type: 'quantitative', axis: { title: 'ms' } }
+      x: { field: 'ms', type: 'quantitative', axis: { title: 'ms' } },
+      color: {
+        condition: { test: "datum.name === 'baseline'", value: 'green' },
+        value: 'steelblue' // Default color
+      }
     },
     layer: [
       {

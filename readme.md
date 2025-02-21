@@ -15,7 +15,7 @@ To support these, there are two types of tests:
 
 A set of test files is generated for each test runner and each test type. To generate a set, for every `.js` file in `./node_modules/sails/lib` ([Sails](https://sailsjs.com/) is just a project with lots of files), a corresponding "test" file is generated. In order to simulate "import" load, every test file imports its `lib` counterpart.
 
-Scenarios 1 and 2 contain a "baseline" column, which is just bare node running the same payload.
+Scenarios 1 and 2 contain a "baseline" column, which is just bare node (23.8.0) running the same payload.
 
 > Scenario 3 involves concurrency, so picking the right "baseline" technology is not straightforward and hence remains a TODO.
 
@@ -31,6 +31,7 @@ Scenarios 1 and 2 contain a "baseline" column, which is just bare node running t
 
 Also for good measure:
 
+- [deno test](https://docs.deno.com/runtime/fundamentals/testing/)
 - [bun test](https://bun.sh/docs/cli/test)
 
 ### Results on my machine (seconds)
@@ -48,6 +49,7 @@ Also for good measure:
 #### Notes
 
 - Tape does not support concurrent testing. You can see how it performs better than the others to "load all tests" but falls behind hopelessly when it comes to "running all all tests".
+- Bun also doesn't support parallel testing ([as of this writing](https://github.com/oven-sh/bun/issues/5585)), but it nevertheless fares better than tape. _Maybe_ their implementation of `crypto.randomBytes` (used to generate cpu load) is faster than node's one?
 
 ## Usage
 
