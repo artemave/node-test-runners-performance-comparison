@@ -49,7 +49,7 @@ Also for good measure:
 #### Notes
 
 - Tape does not support concurrent testing. You can see how it performs better than the others to "load all tests" but falls behind hopelessly when it comes to "running all all tests".
-- Bun also doesn't support parallel testing ([as of this writing](https://github.com/oven-sh/bun/issues/5585)), but it nevertheless fares better than tape (and as good as deno that does!). _Maybe_ their implementation of `crypto.randomBytes` (used to generate cpu load) is faster than node's one?
+- Bun also doesn't support parallel testing ([as of this writing](https://github.com/oven-sh/bun/issues/5585)), but it nevertheless fares better than tape (and as good as deno that does!). _Maybe_ their implementation of `crypto.randomBytes` (used to generate cpu load) is faster than that of node/deno?
 
 ## Usage
 
