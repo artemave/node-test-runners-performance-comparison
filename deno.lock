@@ -1,5 +1,5 @@
 {
-  "version": "4",
+  "version": "5",
   "specifiers": {
     "jsr:@std/assert@*": "1.0.11",
     "jsr:@std/internal@^1.0.5": "1.0.5"
@@ -18,16 +18,16 @@
   "workspace": {
     "packageJson": {
       "dependencies": [
-        "npm:@eslint/js@^9.20.0",
+        "npm:@eslint/js@latest",
         "npm:@types/node@latest",
         "npm:ava@latest",
-        "npm:bun@^1.2.2",
+        "npm:bun@latest",
         "npm:canvas@^3.1.0",
         "npm:colors@latest",
-        "npm:deno@^2.2.1",
-        "npm:eslint@^9.20.1",
+        "npm:deno@latest",
+        "npm:eslint@latest",
         "npm:fast-glob@latest",
-        "npm:globals@^15.15.0",
+        "npm:globals@latest",
         "npm:jest@latest",
         "npm:mocha@latest",
         "npm:sails@latest",

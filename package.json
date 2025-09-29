@@ -19,10 +19,10 @@
   "dependencies": {
     "assert-raisins": "github:artemave/assert-raisins",
     "ava": "latest",
-    "bun": "^1.2.2",
+    "bun": "latest",
     "canvas": "^3.1.0",
     "colors": "latest",
-    "deno": "^2.2.1",
+    "deno": "latest",
     "fast-glob": "latest",
     "jest": "latest",
     "mocha": "latest",
@@ -33,9 +33,9 @@
     "vitest": "latest"
   },
   "devDependencies": {
-    "@eslint/js": "^9.20.0",
+    "@eslint/js": "latest",
     "@types/node": "latest",
-    "eslint": "^9.20.1",
-    "globals": "^15.15.0"
+    "eslint": "latest",
+    "globals": "latest"
   }
 }

@@ -25,13 +25,13 @@ const node = {
   },
   scenarios: {
     allTestsFilesImportOnly: {
-      cmd: 'node --test ./build/node/importOnly/*Test.js'
+      cmd: 'node --test ./build/node_builtin/importOnly/*Test.js'
     },
     singleTestFileImportOnly: {
-      cmd: 'node --test ./build/node/importOnly/requestTest.js'
+      cmd: 'node --test ./build/node_builtin/importOnly/requestTest.js'
     },
     allTestsFilesWithLoad: {
-      cmd: 'node --test ./build/node/withLoad/*Test.js'
+      cmd: 'node --test ./build/node_builtin/withLoad/*Test.js'
     }
   }
 }
@@ -99,13 +99,13 @@ const bun = {
   },
   scenarios: {
     allTestsFilesImportOnly: {
-      cmd: './node_modules/.bin/bun test ./build/bun/importOnly/*Test.js'
+      cmd: './node_modules/.bin/bun test --concurrent ./build/bun/importOnly/*Test.js'
     },
     singleTestFileImportOnly: {
       cmd: './node_modules/.bin/bun test ./build/bun/importOnly/requestTest.js'
     },
     allTestsFilesWithLoad: {
-      cmd: './node_modules/.bin/bun test ./build/bun/withLoad/*Test.js'
+      cmd: './node_modules/.bin/bun test --concurrent ./build/bun/withLoad/*Test.js'
     }
   }
 }
@@ -137,13 +137,13 @@ const ars = {
   },
   scenarios: {
     allTestsFilesImportOnly: {
-      cmd: './node_modules/.bin/ars build/assert-raisins/importOnly/*Test.js'
+      cmd: './node_modules/.bin/ars build/assert_raisins/importOnly/*Test.js'
     },
     singleTestFileImportOnly: {
-      cmd: './node_modules/.bin/ars build/assert-raisins/importOnly/requestTest.js'
+      cmd: './node_modules/.bin/ars build/assert_raisins/importOnly/requestTest.js'
     },
     allTestsFilesWithLoad: {
-      cmd: './node_modules/.bin/ars build/assert-raisins/withLoad/*Test.js'
+      cmd: './node_modules/.bin/ars build/assert_raisins/withLoad/*Test.js'
     }
   }
 }

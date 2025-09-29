@@ -1,125 +1,125 @@
 {
   "baseline": {
     "allTestsFilesImportOnly": {
-      "ms": 282
+      "ms": 157
     },
     "singleTestFileImportOnly": {
-      "ms": 45
+      "ms": 37
     },
     "allTestsFilesWithLoad": {}
   },
   "node-builtin": {
     "allTestsFilesImportOnly": {
-      "ms": 808
+      "ms": 583
+    },
+    "singleTestFileImportOnly": {
+      "ms": 73
+    },
+    "allTestsFilesWithLoad": {
+      "ms": 1115
+    }
+  },
+  "mocha": {
+    "allTestsFilesImportOnly": {
+      "ms": 401
     },
     "singleTestFileImportOnly": {
       "ms": 92
     },
     "allTestsFilesWithLoad": {
-      "ms": 1608
-    }
-  },
-  "mocha": {
-    "allTestsFilesImportOnly": {
-      "ms": 613
-    },
-    "singleTestFileImportOnly": {
-      "ms": 123
-    },
-    "allTestsFilesWithLoad": {
-      "ms": 1362
+      "ms": 883
     }
   },
   "vitest": {
     "allTestsFilesImportOnly": {
-      "ms": 2624
+      "ms": 2162
     },
     "singleTestFileImportOnly": {
-      "ms": 539
+      "ms": 481
     },
     "allTestsFilesWithLoad": {
-      "ms": 3511
+      "ms": 2752
     }
   },
   "vitest (no isolate)": {
     "allTestsFilesImportOnly": {
-      "ms": 1073,
+      "ms": 978,
       "notes": "Faster concurrency option (non-default)"
     },
     "singleTestFileImportOnly": {
-      "ms": 602
+      "ms": 597
     },
     "allTestsFilesWithLoad": {
-      "ms": 1959,
+      "ms": 1494,
       "notes": "Faster concurrency option (non-default)"
     }
   },
   "jest (esm)": {
     "allTestsFilesImportOnly": {
-      "ms": 2189
+      "ms": 1384
     },
     "singleTestFileImportOnly": {
-      "ms": 428
+      "ms": 300
     },
     "allTestsFilesWithLoad": {
-      "ms": 3050
+      "ms": 1893
     }
   },
   "jest": {
     "allTestsFilesImportOnly": {
-      "ms": 1758
+      "ms": 1127
     },
     "singleTestFileImportOnly": {
-      "ms": 426
+      "ms": 300
     },
     "allTestsFilesWithLoad": {
-      "ms": 2456
+      "ms": 1593
     }
   },
   "tape": {
     "allTestsFilesImportOnly": {
-      "ms": 316,
+      "ms": 198,
       "notes": "No concurrency"
     },
     "singleTestFileImportOnly": {
-      "ms": 91
+      "ms": 66
     },
     "allTestsFilesWithLoad": {
-      "ms": 7262,
+      "ms": 5380,
       "notes": "No concurrency"
     }
   },
   "bun": {
     "allTestsFilesImportOnly": {
-      "ms": 304
+      "ms": 251
     },
     "singleTestFileImportOnly": {
-      "ms": 40
+      "ms": 28
     },
     "allTestsFilesWithLoad": {
-      "ms": 4571
+      "ms": 2742
     }
   },
   "deno": {
     "allTestsFilesImportOnly": {
-      "ms": 2177
+      "ms": 1122
     },
     "singleTestFileImportOnly": {
-      "ms": 505
+      "ms": 399
     },
     "allTestsFilesWithLoad": {
-      "ms": 4550
+      "ms": 2371
     }
   },
   "assert-raisins": {
     "allTestsFilesImportOnly": {
-      "ms": 396
+      "ms": 268
     },
     "singleTestFileImportOnly": {
-      "ms": 72
+      "ms": 63
     },
     "allTestsFilesWithLoad": {
-      "ms": 1620
+      "ms": 942
     }
   }
 }
