@@ -15,7 +15,7 @@ To support these, there are two types of tests:
 
 A set of test files is generated for each test runner and each test type. To generate a set, for every `.js` file in `./node_modules/sails/lib` ([Sails](https://sailsjs.com/) is just a project with lots of files), a corresponding "test" file is generated. In order to simulate "import" load, every test file imports its `lib` counterpart.
 
-Scenarios 1 and 2 contain a "baseline" column, which is just bare node (24.9.0) running the same payload.
+Scenarios 1 and 2 contain a "baseline" column, which is just bare node (26.4.0) running the same payload.
 
 > Scenario 3 involves concurrency, so picking the right "baseline" technology is not straightforward and hence remains a TODO.
 
