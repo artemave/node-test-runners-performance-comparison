@@ -34,7 +34,7 @@ Also for good measure:
 - [deno test](https://docs.deno.com/runtime/fundamentals/testing/)
 - [bun test](https://bun.sh/docs/cli/test)
 
-### Results on my machine (seconds)
+### Results on my machine (ms)
 
 <p align="center">
   <img width="800" src="./singleTestFileImportOnly.svg"/>
